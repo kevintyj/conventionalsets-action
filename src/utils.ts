@@ -39,6 +39,7 @@ export function getChangelogEntry(changelog: string, version: string) {
 
   let highestLevel: number = BumpLevels.dep;
 
+  // @ts-ignore
   let nodes = ast.children as Array<any>;
   let headingStartInfo:
     | {
@@ -75,6 +76,7 @@ export function getChangelogEntry(changelog: string, version: string) {
     }
   }
   if (headingStartInfo) {
+    // @ts-ignore
     ast.children = (ast.children as any).slice(
       headingStartInfo.index + 1,
       endIndex
